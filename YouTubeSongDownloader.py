@@ -20,7 +20,7 @@ bot = Client(
 )
 HELP = """ *Help*\n\nType /sg and Song Name\nExample : /sg pushpa\n\nDevelped By' @mhdfajis"""
 TEXT = """ `Hai {}, I Am a Song Downloader Bot\nI Can Download Songs,Musics From YouTube and Would upload into Telegram. \n\nUse /help Command For More.\nDevelped By` @mhdfajis """
-HIMG ='https://t.me/otp1verifications/3959'
+HD ='https://t.me/otp1verifications/3959'
 ## Extra Fns -------------------------------
 
 # Convert hh:mm:ss to seconds
@@ -47,7 +47,7 @@ def start(client, message):
 
 @bot.on_message(filters.command(['help']))
 def a(client, message):
-message.reply_photo(photo=HIMG, caption=HELP,
+message.reply_photo(photo=HD,caption=HELP,
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
