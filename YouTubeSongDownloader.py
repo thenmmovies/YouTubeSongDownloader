@@ -18,9 +18,9 @@ bot = Client(
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
 )
-
-TEXT = """ `Hai {}, Am a Song Downloader Bot\nI Can Download Songs,Musics From YouTube and Would upload into Telegram. \n\nUse /help Commands For More.\nDevelped By @mhdfajis `"""
-
+HELP = """ *Help*\n\nType /sg and Song Name\nExample : /sg pushpa\n\nDevelped By' @mhdfajis"""
+TEXT = """ `Hai {}, I Am a Song Downloader Bot\nI Can Download Songs,Musics From YouTube and Would upload into Telegram. \n\nUse /help Command For More.\nDevelped By` @mhdfajis """
+HIMG ='https://t.me/otp1verifications/3959'
 ## Extra Fns -------------------------------
 
 # Convert hh:mm:ss to seconds
@@ -44,7 +44,21 @@ def start(client, message):
         )
     )
 
-@bot.on_message(filters.command(['s']))
+
+@bot.on_message(filters.command(['help']))
+def a(client, message):
+message.reply_photo(photo=HIMG, caption=HELP,
+        quote=False,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Updates 👬', url='https://t.me/botcodesryou'),
+                    InlineKeyboardButton('Support 🤗', url='https://t.me/codingdiscuss')
+                ]
+            ]
+        )
+    )
+@bot.on_message(filters.command(['sg']))
 def a(client, message):
     query = ''
     for i in message.command[1:]:
@@ -65,7 +79,7 @@ def a(client, message):
             link = f"https://youtube.com{results[0]['url_suffix']}"
             # print(results)
             title = results[0]["title"]
-            thumbnail = results[0]["thumbnails"][0]
+             thumbnail = results[0]["thumbnails"][0]
             duration = results[0]["duration"]
 
             ## UNCOMMENT THIS IF YOU WANT A LIMIT ON DURATION. CHANGE 1800 TO YOUR OWN PREFFERED DURATION AND EDIT THE MESSAGE (30 minutes cap) LIMIT IN SECONDS
@@ -73,7 +87,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            views = results[0]["views"]
+            views = results[0]["views"] 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
