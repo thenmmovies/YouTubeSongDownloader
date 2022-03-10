@@ -11,7 +11,7 @@ import requests
 
 import os
 from config import Config
-
+IMG ='https://t.me/otp1verifications/3941'
 bot = Client(
     'YouTubeSongDownloader',
     bot_token = Config.BOT_TOKEN,
@@ -19,7 +19,7 @@ bot = Client(
     api_hash = Config.API_HASH
 )
 
-TEXT = """ `Hai {}, Am a YouTube Downloader Bot I Can Download Songs,Musics From YouTube and lyrics and Would upload into Telegram. Use /help Commands For More.`"""
+TEXT = """ `Hai {}, Am a Song Downloader Bot\nI Can Download Songs,Musics From YouTube and Would upload into Telegram. \n\nUse /help Commands For More.\nDevelped By @mhdfajis `"""
 
 ## Extra Fns -------------------------------
 
@@ -32,8 +32,7 @@ def time_to_seconds(time):
 ## Commands --------------------------------
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    message.reply_text(
-        text=TEXT.format(message.from_user.mention), 
+    message.reply_photo(photo=IMG, caption=START.format(message.from_user.mention),
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -95,7 +94,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎧 𝐓𝐢𝐭𝐥𝐞 : [{title[:35]}]({link})\n⏳ 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 : `{duration}`\n🎬 𝐒𝐨𝐮𝐫𝐜𝐞 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n👁‍🗨 𝐕𝐢𝐞𝐰𝐬 : `{views}`\n\n💌 A Bot 𝐁𝐲 : @Animemusicarchive6'
+        rep = f'🎧 𝐓𝐢𝐭𝐥𝐞 : [{title[:35]}]({link})\n⏳ 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 : `{duration}`\n🎬 𝐒𝐨𝐮𝐫𝐜𝐞 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n👁‍🗨 𝐕𝐢𝐞𝐰𝐬 : `{views}`\n\n💌 𝐁𝐲 : @Fajis_SongBot 
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
