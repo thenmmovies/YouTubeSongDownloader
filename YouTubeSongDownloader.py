@@ -19,6 +19,8 @@ bot = Client(
     api_hash = Config.API_HASH
 )
 
+TEXT = """ `Hai {}, Am a YouTube Downloader Bot I Can Download Songs,Musics From YouTube and lyrics and Would upload into Telegram. Use /help Commands For More.`"""
+
 ## Extra Fns -------------------------------
 
 # Convert hh:mm:ss to seconds
@@ -30,9 +32,8 @@ def time_to_seconds(time):
 ## Commands --------------------------------
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-   Yᴇᴀɢᴇʀɪsᴛ Bᴏᴛs = f'👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\n𝗜 𝗔𝗺 🎸𓂀 𝕐συ𝕋υႦҽ 𝕊σɳɠ 𝔻σɯɳʅσαԃҽɾ�\n\n𝗦𝗲𝗻𝗱 𝗧𝗵𝗲 𝗡𝗮𝗺𝗲 𝗢𝗳 𝗧𝗵𝗲 𝗦𝗼𝗻𝗴 𝗬𝗼𝘂 𝗪𝗮𝗻𝘁... 😍🥰🤗\n\n𝗧𝘆𝗽𝗲 /s 𝗦𝗼𝗻𝗴 𝗡𝗮𝗺𝗲\n\n𝐄𝐠. /s Faded'
     message.reply_text(
-        text=Yᴇᴀɢᴇʀɪsᴛ Bᴏᴛs , 
+        text=TEXT.format(message.from_user.mention), 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
