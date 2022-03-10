@@ -37,7 +37,7 @@ def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates 👬', url='https://t.me/botcodesryou'),
+                    InlineKeyboardButton('Updates 👬', url='https://t.me/botcodesforyou'),
                     InlineKeyboardButton('Support 🤗', url='https://t.me/codingdiscuss')
                 ]
             ]
@@ -52,7 +52,7 @@ def help(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates 👬', url='https://t.me/botcodesryou'),
+                    InlineKeyboardButton('Updates 👬', url='https://t.me/botcodesforyou'),
                     InlineKeyboardButton('Support 🤗', url='https://t.me/codingdiscuss')
                 ]
             ]
