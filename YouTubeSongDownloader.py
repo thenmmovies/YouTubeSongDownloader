@@ -18,7 +18,7 @@ bot = Client(
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
 )
-HELP = """ `Type /sg and Song Name\nExample : /sg pushpa\n\nDevelped By' @mhdfajis"""
+HELP = """ `Type /sg and Song Name\nExample : /sg pushpa\n\nDevelped By` @mhdfajis"""
 TEXT = """ `Hai {}, I Am a Song Downloader Bot\nI Can Download Songs,Musics From YouTube and Would upload into Telegram. \n\nUse` /help `Command For More.\nDevelped By` @mhdfajis """
 HD ='https://t.me/otp1verifications/3959'
 ## Extra Fns -------------------------------
