@@ -46,8 +46,8 @@ def start(client, message):
 
 
 @bot.on_message(filters.command(['help']))
-def a(client, message):
-message.reply_photo(photo=HD,caption=HELP,
+def help(client, message):
+    message.reply_photo(photo=HD,caption=HELP,
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
