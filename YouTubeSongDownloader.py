@@ -32,7 +32,7 @@ def time_to_seconds(time):
 ## Commands --------------------------------
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    message.reply_photo(photo=IMG, caption=START.format(message.from_user.mention),
+    message.reply_photo(photo=IMG, caption=TEXT.format(message.from_user.mention),
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
